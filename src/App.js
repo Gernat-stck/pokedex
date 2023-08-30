@@ -20,7 +20,7 @@ function App() {
     <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/search" element= { <Search />} />
-        <Route exact path="/elementfilter" element= {<FilterType />}/>
+        <Route exact path="/elementfilter/:categoryName" element= {<FilterType />}/>
     </Routes>
     </div>
     </Router>

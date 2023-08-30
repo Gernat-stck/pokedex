@@ -11,6 +11,7 @@ export default class Search extends Component
     { 
       name: '',
       img: '',
+      img2: '',  
       ataque: '',
       defensa: '',
       velocidad:''
@@ -25,6 +26,7 @@ export default class Search extends Component
 
    this.setState({
       img: data.sprites.other.dream_world.front_default,
+      img2: data.sprites.front_shiny,
       ataque: data.stats[1].base_stat,
       defensa: data.stats[2].base_stat,
       velocidad: data.stats[5].base_stat
@@ -80,6 +82,7 @@ export default class Search extends Component
       return(
         <div className='App'>
             <MainCard  pokemonData={this.state} />
+            <h1 className='subtitle'>Similares: </h1>
             <ListPokemons />
 
       </div>

@@ -1,0 +1,24 @@
+.name-title{
+    font-family: 'Pokemon Solid', sans-serif;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+    color: yellow;
+    font-size: 25px;
+  }
+  
+  .h1-category{
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: 55px;
+    color: yellow;
+    text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black;
+    height: 2px;
+    width: auto;
+    text-align: center;
+    margin-top: 75px;
+  
+  }
+  .subtitle{
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: 30px;
+    text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black;
+    color: yellow;
+  }

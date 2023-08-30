@@ -1,38 +1,36 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
-import { useLocation } from 'react-router';
-import FilterCard from '../Cards/FilterCard'
-
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import FilterCard from "./FilterCard";
+import { useParams } from "react-router";
 
 export default function FilterType() {
+  const { categoryName } = useParams();
 
-let location = useLocation();
-
-
-const [pokemons,setPokemons] = useState({
-    pokemon:
-    [{"name":"bulbasaur","url":"https://pokeapi.co/api/v2/pokemon/1"}]
-}
-);
-const traerPokemones = () => 
-{  
-    axios.get(`${location.state.url}`)
-    .then((Respuesta) => 
+  const [pokemons, setPokemons] = useState([
     {
-       setPokemons(Respuesta.data.pokemon);
-    })
-
-}
-useEffect(() =>
-{
+      name: "",
+      url: "",
+    },
+  ]);
+  const traerPokemones = () => {
+    axios
+      .get(`https://pokeapi.co/api/v2/type/${categoryName}/`)
+      .then((Respuesta) => {
+        setPokemons(Respuesta.data.pokemon);
+      });
+  };
+  useEffect(() => {
     traerPokemones();
-// eslint-disable-next-line react-hooks/exhaustive-deps
-},[pokemons.length])
-return (
-<div>
-    <FilterCard pokemon={pokemons} />
-    
-</div>
-)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [categoryName]);
+
+  return (
+    <div className="text-center inline-flex items-center">
+      {Array.isArray(pokemons) && pokemons.length > 1 ? (
+        <FilterCard pokemon={pokemons} />
+      ) : (
+        <p>Cargando...</p>
+      )}
+    </div>
+  );
 }

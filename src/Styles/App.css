@@ -1,13 +1,8 @@
-html {
-  height: 100%;
+.drop{
+  position: relative;
+  z-index: 50;
 }
-body {
-  margin:0;
-  padding:0;
-  font-family: sans-serif;
-}
-
-.card{
+.card-container {
   display: inline-block;
   margin: 50px;
   columns: auto;
